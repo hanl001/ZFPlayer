@@ -46,7 +46,7 @@
 /// 加载失败按钮
 @property (nonatomic, strong, readonly) UIButton *failBtn;
 /// 底部播放进度
-@property (nonatomic, strong, readonly) ZFSliderView *bottomPgrogress;
+@property (nonatomic, strong, readonly) ZFSliderView *bottomProgress;
 /// 封面图
 @property (nonatomic, strong, readonly) UIImageView *coverImageView;
 /// 高斯模糊的背景图
