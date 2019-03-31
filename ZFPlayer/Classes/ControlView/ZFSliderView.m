@@ -100,11 +100,11 @@ static const CGFloat kAnimate = 0.3;
     /// 修复slider  bufferProgress错位问题
     CGFloat finishValue = self.bgProgressView.zf_width * self.bufferValue;
     self.bufferProgressView.zf_width = finishValue;
-    self.sliderProgressView.zf_left = kProgressMargin;
     self.bufferProgressView.zf_left = kProgressMargin;
     
     CGFloat progressValue  = self.bgProgressView.zf_width * self.value;
     self.sliderProgressView.zf_width = progressValue;
+    self.sliderProgressView.zf_left = kProgressMargin;
     self.sliderBtn.zf_left = (self.zf_width - self.sliderBtn.zf_width) * self.value;
 }
 

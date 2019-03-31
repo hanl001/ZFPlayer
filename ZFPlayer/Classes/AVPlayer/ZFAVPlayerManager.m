@@ -154,6 +154,15 @@ static NSString *const kPresentationSize         = @"presentationSize";
         self->_isPlaying = YES;
         self.playState = ZFPlayerPlayStatePlaying;
     }
+    if (self.isMuted) {
+        if ([AVAudioSession sharedInstance].isOtherAudioPlaying) {
+            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+            [[AVAudioSession sharedInstance] setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+        }
+    } else {
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    }
 }
 
 - (void)pause {
