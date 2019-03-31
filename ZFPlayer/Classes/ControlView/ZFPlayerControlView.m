@@ -149,9 +149,9 @@
     min_h = 10;
     self.fastProgressView.frame = CGRectMake(min_x, min_y, min_w, min_h);
     
-    min_x = 0;
+    min_x = -4;
     min_y = min_view_h - 1;
-    min_w = min_view_w;
+    min_w = min_view_w + 12;
     min_h = 1;
     self.bottomPgrogress.frame = CGRectMake(min_x, min_y, min_w, min_h);
     
@@ -217,7 +217,9 @@
             }
         }
     } completion:^(BOOL finished) {
-        self.bottomPgrogress.hidden = NO;
+        if (!self.player.currentPlayerManager.isMuted) {
+            self.bottomPgrogress.hidden = NO;
+        }
     }];
 }
 
